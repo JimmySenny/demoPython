@@ -5,7 +5,8 @@ j = 1;
 while(i < 10):
     j = 1;
     while(j < 10):
-        print('[%d]*[%d]=[%d]\t\t', i, j, i*j );
+        if(i >= j ):
+            print('[%d]*[%d]=[%d]'%( i, j, i*j ),end='\t');
         j += 1;
     i += 1;
     print("\n");
