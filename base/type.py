@@ -8,3 +8,7 @@ print('12.345',type(b))
 print('1+5j',type(c))
 print('hello world',type(d))
 print('True',type(e))
+
+print('[%d]'%True);
+print('[%d]'%False);
+
