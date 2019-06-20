@@ -43,7 +43,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler, SimpleHTTPRequestHan
 EXEC = sys.executable
 PORT = 39093
 #TEMP = tempfile.mkdtemp(suffix='_py', prefix='learn_python_')
-TEMP = r'D:\git-demo\demoPython\liaoxuefeng\run'
+TEMP = 'D:\\git-demo\\demoPython\\liaoxuefeng\\run\\'
 
 HTML_INDEX = r'''
 <html>
