@@ -49,23 +49,35 @@ def main():
 	print(str2float('123.'));
 	print(str2float('123'));
 
-	'''
-	3
-	[123][0]
-	123
-	1
-	[0][0]
-	0
-	0
-	[0][0]
-	0
-	3
-	[123][0]
-	123
-	[123][0]
-	123
-	'''
-
 if __name__ == '__main__':
 	main();
 
+
+'''
+def str2float(s):
+    def str2int(ns):
+        return {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9}[ns]
+ 
+    def f(x,y):
+        return x*10+y
+    resultNum = 0
+    numL = s.split('.')
+ 
+    for index,numS in enumerate(numL):
+        if index==0:
+            resultNum = resultNum + reduce(f,map(str2int,numS))
+        else:
+            resultNum = resultNum + reduce(f,map(str2int,numS))*pow(10,0-len(numS))
+    return resultNum
+
+#利用map和reduce编写一个str2float函数，把字符串‘123.456’转换成浮点数123.456
+def str2float(s):
+    def fn(x,y):
+        return x*10+y
+    n=s.index('.')
+    s1=list(map(int,[x for x in s[:n]]))
+    s2=list(map(int,[x for x in s[n+1:]]))
+    return reduce(fn,s1)+reduce(fn,s2)/(10**len(s2))#乘幂
+print('\'123.456\'=',str2float('123.456'))
+
+'''
