@@ -37,11 +37,11 @@ def tst_cookie():
 
 def main():
 	#tst_get();
-	#tst_params();
+	tst_params();
 	#tst_json();
-	tst_header();
-	tst_post();
-	tst_cookie();
+	#tst_header();
+	#tst_post();
+	#tst_cookie();
 
 if __name__ == '__main__':
 	main();
