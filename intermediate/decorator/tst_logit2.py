@@ -11,7 +11,7 @@ class logit(object):
 		@wraps(func)
 		def wrapped_function(*args, **kwargs):
 			log_string = func.__name__ + " was called";
-			with open(self.logfile, 'w') as opend_file:
+			with open(self.logfile, 'a') as opend_file:
 				opend_file.write(log_string + '\n');
 			self.notify();
 			return func(*args, **kwargs);
