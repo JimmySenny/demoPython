@@ -4,7 +4,7 @@ from email.mime.text import MIMEText
 
 def main():
     sender = 'jimmysheng128@126.com';
-    receivers = [ 'jimmysenny@126.com', 'shengzhiming.zh@gsbankchina.com'];
+    receivers = [ 'jimmysenny@126.com'];
     message = MIMEText('请周一完成周例会', 'plain', 'utf-8');
     message['From'] = Header('Jimmy', 'utf-8');
     message['To'] = Header('Senny', 'utf-8' );
