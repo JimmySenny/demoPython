@@ -13,13 +13,13 @@ from email.header import Header
 #qq邮箱smtp服务器
 host_server = 'smtp.126.com'
 #sender_qq为发件人的qq号码
-sender_qq = 'jimmysheng128@126.com'
+sender_qq = ''
 #pwd为qq邮箱的授权码
 pwd = input('Password:');
 #发件人的邮箱
-sender_qq_mail = 'jimmysheng128@126.com'
+sender_qq_mail = 
 #收件人邮箱
-receiver = 'jimmysheng128@126.com'
+receiver = 
 
 #邮件的正文内容
 mail_content = "你好，<p>这是使用python登录qq邮箱发送HTML格式邮件的测试：</p><p><a href='http://www.python.org'>Python</a></p>"
