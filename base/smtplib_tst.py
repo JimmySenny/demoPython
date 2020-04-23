@@ -10,7 +10,7 @@ def main():
     message['To'] = Header('Senny', 'utf-8' );
     message['Subject'] = Header('周一工作安排', 'utf-8');
     smtper = SMTP('smtp.126.com');
-    smtper.login(sender, 'Jimmy881208');
+    
     smtper.sendmail(sender,receivers, message.as_string());
 
     print('send done');
