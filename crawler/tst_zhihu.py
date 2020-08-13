@@ -2,8 +2,8 @@
 # -*- conding:utf-8 -*-
 
 import requests;
-#import lxml; 
-from lxml import etree;
+from lxml import etree
+
 
 import chardet;
 
@@ -22,11 +22,14 @@ def get_request( url, num = 0 ):
     print( url, num );
 
     html = requests.get( url=url, headers=requestHeaders );
-#    print( html.text );
+    with open( 'zhihu.html', 'w' ) as f:
+        f.write( html.text );
 
     s = etree.HTML( html.text )
-    question_title = s.xpath( '//*[@id="root"]/div/main/div/div[1]/div[2]/div/div[1]/div[1]/h1' );
-    question_content = s.xpath( '//*[@id="root"]/div/main/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/div/div/div/span');
+#    question_title = s.xpath( '/html/body/div[1]/div/main/div/div[1]/div[2]/div/div[1]/div[1]/h1' );
+#    question_content = s.xpath( '//*[@id="root"]/div/main/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/div/div/div/span');
+    question_title = s.xpath( '//*[@class="QuestionHeader-title"]/text()')[0];
+    question_content = s.xpath( '//*[@class="RichText ztext"]/text()')[0];
 
     print( question_title );
     print( question_content );

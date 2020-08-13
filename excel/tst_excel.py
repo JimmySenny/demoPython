@@ -1,10 +1,16 @@
+#!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
 import openpyxl;
 
+"""
+workbook 工作簿
+worksheet 工作表
+row,column,cell 行、列、单元格
+"""
 """ WorkBook Sheet Cell """
 
-def tst_excel_creatwb(st_name='tst_sheet', wb_name='./tst.xlsx'):
+def tst_excel_creatwb(st_name='tst_sheet', wb_name='./example.xlsx'):
     #创建工作簿
     wb = openpyxl.Workbook();
     #创建工作表
@@ -13,13 +19,13 @@ def tst_excel_creatwb(st_name='tst_sheet', wb_name='./tst.xlsx'):
     wb.save(wb_name);
     wb.close();
 
-def tst_excel_creatst(st_name='tst_sheet', wb_name='./tst.xlsx'):
+def tst_excel_creatst(st_name='tst_sheet', wb_name='./example.xlsx'):
     wb = openpyxl.load_workbook(wb_name);
     st = wb.create_sheet(st_name);
     wb.save(wb_name);
     wb.close();
 
-def tst_excel_read(st_name='tst_sheet', wb_name='./tst.xlsx'):
+def tst_excel_read(st_name='tst_sheet', wb_name='./example.xlsx'):
     #打开工作簿
     wb = openpyxl.load_workbook(wb_name);
     print(wb.sheetnames);
@@ -42,7 +48,7 @@ def tst_excel_read(st_name='tst_sheet', wb_name='./tst.xlsx'):
     print(rowData);
     print(columnData);
 
-def tst_excel_write(st_name="write_sheet", wb_name="./tst.xlsx"):
+def tst_excel_write(st_name="write_sheet", wb_name="./example.xlsx"):
     wb = openpyxl.load_workbook(wb_name);
     st = wb[st_name];
     #写入
@@ -53,7 +59,7 @@ def tst_excel_write(st_name="write_sheet", wb_name="./tst.xlsx"):
     wb.save(wb_name);
     wb.close();
 
-def tst_excel_removest (st_name="write_sheet", wb_name="./tst.xlsx"):
+def tst_excel_removest (st_name="write_sheet", wb_name="./example.xlsx"):
     wb = openpyxl.load_workbook(wb_name);
     st = wb[st_name];
     wb.remove(st);
